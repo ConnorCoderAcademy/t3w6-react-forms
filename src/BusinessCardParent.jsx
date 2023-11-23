@@ -1,22 +1,27 @@
-import { Component } from "react";
-import {BusinessCardDisplay} from "./BusinessCardDisplay";
+import { Component } from "react"
+import BusinessCardDisplay from "./BusinessCardDisplay";
 
-class BusinessCardParent extends Component {
-    constructor() {
+export default class BusinessCardParent extends Component {
+    constructor(){
         super();
+        this.state = {
+            name: "Default Name",
+            email: "example@email.com"
+        }
     }
+
     render(){
         return(
             <div>
-                
+                <BusinessCardDisplay name={this.state.name} email={this.state.email} />
             </div>
         )
     }
+
 }
 
+// import react from "react"
 
-// import React from "react";
-
-// class BusinessCardParent extends React.Component {
+// class BusinessCardParent extends react.Component {
 
 // }
