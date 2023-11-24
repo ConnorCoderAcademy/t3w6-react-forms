@@ -14,36 +14,67 @@ export default class BusinessCardParent extends Component {
     }
 
     updateState = (stateKeyId, newStateValue) => {
-        if (Object.keys(this.state).includes(stateKeyId)) {
-            if (stateKeyId == "name") {
-                // add name validation here
-            } else if (stateKeyId == "email") {
-                // add email validation here
+        if (Object.keys(this.state).includes(stateKeyId)){
+            if (stateKeyId === "name") {
+                //add name validation here
+            } else if (stateKeyId === "email") {
+                //add email validation here
             }
-            
+
             this.setState({
                 [stateKeyId]: newStateValue
             })
         } else {
             console.warn("Incorrect key for the state")
-        }
-    }
-
-    render(){
-        if (this.state.editMode) {
-            return(
-                <BusinessCardForm 
-                    name={this.state.name} 
-                    email={this.state.email}
-                    updateState={this.updateState}
-                    />
-            )
-        } else {
-            return (
-                <BusinessCardDisplay name={this.state.name} email={this.state.email} />
-            )
         }      
     }
+
+    toggleEditMode = () => {
+        this.setState({editMode: !this.state.editMode})
+    }
+    render(){
+       
+        return(
+            <div>
+                {
+                    this.state.editMode ?
+                        <BusinessCardForm 
+                        name={this.state.name} 
+                        email={this.state.email}
+                        updateState={this.updateState}
+                        />
+                    : <BusinessCardDisplay name={this.state.name} email={this.state.email} />
+                }
+                <button onClick={this.toggleEditMode}>Toggle Edit Mode</button>
+            </div>
+            
+        )
+          
+    }
+
+    // render(){
+    //     if (this.state.editMode) {
+    //         return(
+    //             <div>
+    //                 <BusinessCardForm 
+    //                 name={this.state.name} 
+    //                 email={this.state.email}
+    //                 updateState={this.updateState}
+    //                 />
+    //                 <button onClick={this.toggleEditMode}>Toggle Edit Mode</button>
+    //             </div>
+                
+    //         )
+    //     } else {
+    //         return (
+    //             <div>
+    //                 <BusinessCardDisplay name={this.state.name} email={this.state.email} />
+    //                 <button onClick={this.toggleEditMode}>Toggle Edit Mode</button>
+    //             </div>
+                
+    //         )
+    //     }      
+    // }
 
 }
 
