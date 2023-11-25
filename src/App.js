@@ -6,6 +6,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import BusinessCardPage from './pages/BusinessCardPage';
 import { Route, Routes, Outlet } from 'react-router-dom';
+import RedirectHomeButton from './components/RedirectHomeButton';
 
 function App() {
   return (
