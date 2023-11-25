@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import BusinessCardPage from './pages/BusinessCardPage';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Outlet } from 'react-router-dom';
 
 function App() {
   return (
@@ -15,7 +15,8 @@ function App() {
         <Route path='/contact' element={<ContactPage />} />
         <Route path='/about' element={<AboutPage />} />
         <Route path='/cards' element={<BusinessCardPage />} /> */}
-        <Route path="/about" element={<AboutPage />}>
+        <Route path="/about" element={<Outlet />}> 
+          <Route index element= {<AboutPage />} />
           <Route path="contact" element={<ContactPage/>}></Route>
 
         </Route>
