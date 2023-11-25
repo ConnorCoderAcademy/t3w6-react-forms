@@ -1,13 +1,13 @@
-import BusinessCardParent from "../BusinessCardParent"
+import BusinessCardParent from "../components/BusinessCardParent"
 
 
-export default function BusinessCardPage () {
+export default function BusinessCardPage() {
     return (
         <div>
-            <BusinessCardParent/>
-            <BusinessCardParent/>
-            <BusinessCardParent/>
-            <BusinessCardParent/>
+            <BusinessCardParent />
+            <BusinessCardParent />
+            <BusinessCardParent />
+            <BusinessCardParent />
         </div>
     )
 }
